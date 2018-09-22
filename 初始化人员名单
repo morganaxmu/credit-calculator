@@ -1,0 +1,11 @@
+number_0={'姓名':'编号'}
+# 输入所有成员名单，若有变化请自行修改
+import json
+parcipants=json.dumps(number_0,ensure_ascii='Flase')
+file_name=('X:/X/X/paticipants.json')
+# 更改你要保存的位置
+with open(file_name,'w') as f:
+	f.write(parcipants)
+	f.close()
+# 转换成JSON文件
+print('我们成功地写入了参加者名单！')
