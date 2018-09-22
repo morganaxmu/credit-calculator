@@ -69,3 +69,5 @@ while active:
 		tips=input(warming)
 		if tips=='Yes':
 			active = False
+	else:
+		continue
