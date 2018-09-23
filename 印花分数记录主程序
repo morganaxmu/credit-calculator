@@ -70,14 +70,18 @@ while active:
 				credit=whom['TS']
 			else:
 				print('输入不合法')
+				credit='nothing'
 				continue
-		print(name+' gets '+credit+' !')
+			print(name+' gets '+credit+' !')
 	if message=='quit':
 		warming = "\n结束本程序会丢失所有未储存的信息！"
 		warming += "\n输入'Yes'来确定结束程序，不要忘记清空log.json!\n"
 		tips=input(warming)
 		if tips=='Yes':
 			active = False
+		else:
+			print('输入不合法')
+			continue
 	else:
 		print('输入不合法')
 		continue
