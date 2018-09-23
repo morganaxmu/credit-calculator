@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: gbk -*-
 #
-#  Ó¡»¨·ÖÊı¼ÇÂ¼Ö÷³ÌĞò.py
+#  å°èŠ±åˆ†æ•°è®°å½•ä¸»ç¨‹åº.py
 #  
 #  Copyright 2018 morganaxmu
 #  
@@ -25,21 +25,21 @@ import json
 file_name=('X:/X/X/paticipants.json')
 file_name2=('X:/X/X/result.json')
 file_name3=('X:/X/X/log.json')
-# ÊäÈë×Ô¼ºµÄÎÄ¼şÂ·¾¶
-# PythonÀïÍ·\rºÃÏñÊÇÌáÇ°µ½×îÇ°Ãæ£¬ËùÒÔÂ·¾¶ÀïÃæµÄRÒª´óĞ´, »òÖ±½ÓÓÃ/
+# è¾“å…¥è‡ªå·±çš„æ–‡ä»¶è·¯å¾„
+# Pythoné‡Œå¤´\rå¥½åƒæ˜¯æå‰åˆ°æœ€å‰é¢ï¼Œæ‰€ä»¥è·¯å¾„é‡Œé¢çš„Rè¦å¤§å†™, æˆ–ç›´æ¥ç”¨/
 info=open(file_name,'r',encoding='utf-8')
 player=json.load(info)
-# ÔØÈë²ÎÓëÕßÁĞ±í
+# è½½å…¥å‚ä¸è€…åˆ—è¡¨
 namelist=[]
 player_info=[]
 with open(file_name2,'w') as f:
 		f.write(' ')
 		f.close()
-# ³õÊ¼»¯
+# åˆå§‹åŒ–
 for key in player:
 	new_ass=key
 	namelist.append(new_ass)
-# range()ÖĞµÄ²ÎÊıÇë¸ù¾İ²Î¼ÓÕßÈËÊı½øĞĞÈ·¶¨
+# range()ä¸­çš„å‚æ•°è¯·æ ¹æ®å‚åŠ è€…äººæ•°è¿›è¡Œç¡®å®š
 for i in range(19):
 	intermedia={'name':namelist[i],'number':i+1,'A':'0','B':'0','C':'0',
 	'D':'0','E':'0','TS':'0'}
@@ -48,17 +48,17 @@ for i in range(19):
 	with open(file_name2,'a') as f:
 		f.write(intermedia2)
 		f.close()
-# ¸ù¾İ²ÎÓëÕßÁĞ±í£¬´´½¨¶ÔÓ¦¸öÈËĞÅÏ¢£¬½ÓÏÂÀ´½øÈëÖ÷Ñ­»·
-prompt = "\n»¶Ó­!\nÊäÈë'add'Ö¸ÁîÒÔÎªÄ³ÈËÔö¼ÓÓ¡»¨."
-prompt += "\nÊäÈë'check'À´²é¿´Ä³ÈËµÄÓ¡»¨ÊıÁ¿¡£\nÊäÈë'quit'ÖÕÖ¹³ÌĞò\n"
+# æ ¹æ®å‚ä¸è€…åˆ—è¡¨ï¼Œåˆ›å»ºå¯¹åº”ä¸ªäººä¿¡æ¯ï¼Œæ¥ä¸‹æ¥è¿›å…¥ä¸»å¾ªç¯
+prompt = "\næ¬¢è¿!\nè¾“å…¥'add'æŒ‡ä»¤ä»¥ä¸ºæŸäººå¢åŠ å°èŠ±."
+prompt += "\nè¾“å…¥'check'æ¥æŸ¥çœ‹æŸäººçš„å°èŠ±æ•°é‡ã€‚\nè¾“å…¥'quit'ç»ˆæ­¢ç¨‹åº\n"
 message=''
-# ³õÊ¼»¯ÏµÍ³
+# åˆå§‹åŒ–ç³»ç»Ÿ
 active = True
 while active:
 	message=input(prompt)
 	if message=='add':
-		name=input('Ë­»ñµÃÁËÓ¡»¨£¿\n')
-		object=input('ÔÚÄÄ¸öÏîÄ¿ÉÏ£¿\n')
+		name=input('è°è·å¾—äº†å°èŠ±ï¼Ÿ\n')
+		object=input('åœ¨å“ªä¸ªé¡¹ç›®ä¸Šï¼Ÿ\n')
 		for i in range(19):
 			whom=player_info[i]
 			if whom['name']==name:
@@ -69,26 +69,36 @@ while active:
 					TS=TS+1
 					TS=str(TS)
 					whom['TS']=TS
-					print(name+"ÔÚ"+object+"µÃµ½ÁËÒ»Ã¶Ó¡»¨")
+					print(name+"åœ¨"+object+"å¾—åˆ°äº†ä¸€æšå°èŠ±")
 				else:
-					print('ÄãÖ»ÄÜÔÚÒ»¸öÏîÄ¿ÉÏµÃµ½Ò»Ã¶Ó¡»¨£¡')
-# ½ÓÏÂÀ´±£´æ½á¹û		
+					print('ä½ åªèƒ½åœ¨ä¸€ä¸ªé¡¹ç›®ä¸Šå¾—åˆ°ä¸€æšå°èŠ±ï¼')
+			else:
+				print('è¾“å…¥ä¸åˆæ³•')
+				continue
+	else:
+		print('è¾“å…¥ä¸åˆæ³•')
+		continue
+# æ¥ä¸‹æ¥ä¿å­˜ç»“æœ		
 		logs=json.dumps(player_info,ensure_ascii='Flase')
 		with open(file_name3,'w') as f:
 			f.write(logs)
 			f.close()
 	if message=='check':
-		name=input("ÄãÏë²éÑ¯Ë­£¿\n")
+		name=input("ä½ æƒ³æŸ¥è¯¢è°ï¼Ÿ\n")
 		for i in range(19):
 			whom=player_info[i]
 			if whom['name']==name:
 				credit=whom['TS']
+			else:
+				print('è¾“å…¥ä¸åˆæ³•')
+				continue
 		print(name+' gets '+credit+' !')
 	if message=='quit':
-		warming = "\n½áÊø±¾³ÌĞò»á¶ªÊ§ËùÓĞÎ´´¢´æµÄĞÅÏ¢£¡"
-		warming += "\nÊäÈë'Yes'À´È·¶¨½áÊø³ÌĞò£¬²»ÒªÍü¼ÇÇå¿Õlog.json!\n"
+		warming = "\nç»“æŸæœ¬ç¨‹åºä¼šä¸¢å¤±æ‰€æœ‰æœªå‚¨å­˜çš„ä¿¡æ¯ï¼"
+		warming += "\nè¾“å…¥'Yes'æ¥ç¡®å®šç»“æŸç¨‹åºï¼Œä¸è¦å¿˜è®°æ¸…ç©ºlog.json!\n"
 		tips=input(warming)
 		if tips=='Yes':
 			active = False
 	else:
+		print('è¾“å…¥ä¸åˆæ³•')
 		continue
