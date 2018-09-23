@@ -75,9 +75,6 @@ while active:
 			else:
 				print('输入不合法')
 				continue
-	else:
-		print('输入不合法')
-		continue
 # 接下来保存结果		
 		logs=json.dumps(player_info,ensure_ascii='Flase')
 		with open(file_name3,'w') as f:
