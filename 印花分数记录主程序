@@ -71,6 +71,9 @@ while active:
 			whom=player_info[i]
 			if whom['name']==name:
 				credit=whom['TS']
+			else:
+				print('输入不合法')
+				continue
 		print(name+' gets '+credit+' !')
 	if message=='quit':
 		warming = "\n结束本程序会丢失所有未储存的信息！"
